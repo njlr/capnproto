@@ -585,6 +585,11 @@ static KJ_CONSTEXPR(const) MinValue_ minValue = MinValue_();
 //
 // `char` is not supported, but `signed char` and `unsigned char` are.
 
+template <typename T>
+inline bool operator==(T t, MaxValue_) { return t == Decay<T>(maxValue); }
+template <typename T>
+inline bool operator==(T t, MinValue_) { return t == Decay<T>(minValue); }
+
 #if __GNUC__
 inline constexpr float inf() { return __builtin_huge_valf(); }
 inline constexpr float nan() { return __builtin_nanf(""); }
