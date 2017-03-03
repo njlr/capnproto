@@ -36,3 +36,10 @@
 
 # cabal-install artifacts
 /compiler/dist/
+
+# Buck
+/buck-out/
+/.buckd/
+/buckaroo/
+.buckconfig.local
+BUCKAROO_DEPS
